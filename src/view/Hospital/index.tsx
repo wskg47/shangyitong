@@ -59,10 +59,6 @@ function Hospital() {
     });
   }, [hoscode, dispatch]);
 
-  const onChangeTab = (key: string) => {
-    navigate(key + `?hoscode=${hoscode}`);
-  };
-
   const cacheTabs = useMemo(() => {
     console.log(1);
 
