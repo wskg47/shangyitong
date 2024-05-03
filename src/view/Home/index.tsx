@@ -1,15 +1,26 @@
 import React from "react";
-import { Button } from "antd";
-import { useNavigate } from "react-router-dom";
+import { Row, Col } from "antd";
 
-function Home() {
-  const navigate = useNavigate();
+import HomeBanner from "./banner";
+import HomeSearch from "./search";
+import Tip from "./tip";
+import HospitalInfo from "./hospitalInfo";
+
+const Home: React.FC = () => {
   return (
     <>
-      <div>首页</div>
-      <Button onClick={() => navigate("/login")}>go登录页</Button>
+      <HomeBanner />
+      <HomeSearch />
+      <Row>
+        <Col span={19}>
+          <HospitalInfo />
+        </Col>
+        <Col span={5}>
+          <Tip />
+        </Col>
+      </Row>
     </>
   );
-}
+};
 
 export default Home;
